@@ -14,21 +14,22 @@ externalDocs:
 servers:
     - url: 'https://endpoint.ainize.ai/parkhojun/chatlearner/'
     - url: 'https://24fa556c.ngrok.io'
-
 tags:
 - name: Ainized-ChatLearner
   description: chatbot
 paths:
   /chatbot:
-    post:
+    get:
       tags:
       - ChatLearner
       summary: request to reply the sentences ...
-      requestBody:
-        content:
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/Input'
+      parameters:
+      - name: sentence
+        in: query
+        description: give me sentence
+        required: true
+        schema:
+          type: string
       responses:
         200:
           description: Success!
@@ -43,10 +44,4 @@ components:
   schemas:
     Sentences:
       type: string
-    Input:
-      type: object
-      properties:
-        sentences:
-          type: string
-        
     

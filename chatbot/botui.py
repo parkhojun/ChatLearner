@@ -35,8 +35,8 @@ def bot_ui():
         session_id = predictor.session_data.add_session()
         # Waiting from standard input.
         question = ''.join(sys.argv[1:])
+        #print(question, file=sys.stderr)
         print(re.sub(r'_nl_|_np_', '\n', predictor.predict(session_id, question)).strip())
-        print("> ", end="")
 
 if __name__ == "__main__":
     bot_ui()
