@@ -12,8 +12,9 @@ externalDocs:
   description: Find out more about Swagger
   url: https://ktis.kookmin.ac.kr
 servers:
-    - url: 'https://24fa556c.ngrok.io'
     - url: 'https://endpoint.ainize.ai/parkhojun/chatlearner/'
+    - url: 'https://24fa556c.ngrok.io'
+
 tags:
 - name: Ainized-ChatLearner
   description: chatbot

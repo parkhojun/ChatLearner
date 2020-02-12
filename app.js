@@ -12,9 +12,10 @@ app.use(cors({
 
 var repo_dir = '.';
 
-app.post('/chatbot', async (req, res) => {
-  console.log('post /chatbot')
-  const sentence = req.body.sentence
+app.get('/chatbot/:sentence', async (req, res) => {
+  console.log('get /chatbot')
+  const sentence = req.query.sentence
+  console.log(req)
   console.log(sentence)
   ret = await runPython(sentence)
   res.json(ret)
