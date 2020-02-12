@@ -12,7 +12,7 @@ app.use(cors({
 
 var repo_dir = '.';
 
-app.get('/chatbot/:sentence', async (req, res) => {
+app.get('/chatbot', async (req, res) => {
   console.log('get /chatbot')
   const sentence = req.query.sentence
   console.log(req)
