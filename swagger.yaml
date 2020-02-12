@@ -1,0 +1,51 @@
+openapi: 3.0.1
+info:
+  title: Ainized-ChatLearner
+  description: 'This repository provides API server using blah blah~.'
+  contact:
+    email: hojun@comcom.ai
+  license:
+    name: Apache 2.0
+    url: 'https'
+  version: 0.0.1
+externalDocs: 
+  description: Find out more about Swagger
+  url: https://ktis.kookmin.ac.kr
+servers:
+    - url: 'https://24fa556c.ngrok.io'
+    - url: 'https://endpoint.ainize.ai/parkhojun/chatlearner/'
+tags:
+- name: Ainized-ChatLearner
+  description: chatbot
+paths:
+  /chatbot:
+    post:
+      tags:
+      - ChatLearner
+      summary: request to reply the sentences ...
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Input'
+      responses:
+        200:
+          description: Success!
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Sentences'
+        405:
+          description: Invalid input
+          content: {}
+components:
+  schemas:
+    Sentences:
+      type: string
+    Input:
+      type: object
+      properties:
+        sentences:
+          type: string
+        
+    

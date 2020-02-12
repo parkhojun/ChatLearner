@@ -15,6 +15,7 @@ var repo_dir = '.';
 app.post('/chatbot', async (req, res) => {
   console.log('post /chatbot')
   const sentence = req.body.sentence
+  console.log(sentence)
   ret = await runPython(sentence)
   res.json(ret)
 })
@@ -28,7 +29,7 @@ runPython = (sentence) => {
   return new Promise((resolve, reject) => {
     let ret = ''
     let config = [
-      repo_dir + "/chatbot/botui.py", "sentence", sentence,
+      repo_dir + "/chatbot/botui.py", "sentence", '"'+sentence+'"',
     ]// botui.py se- --model model --input input
     const pyProg = spawn('python3', config)
     
