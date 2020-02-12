@@ -31,7 +31,7 @@ class HParams:
         """Load hparams from an existing directory."""
         hparams_file = os.path.join(model_dir, "hparams.json")
         if tf.gfile.Exists(hparams_file):
-            print("# Loading hparams from {} ...".format(hparams_file))
+            #print("Loading hparams from {} ...".format(hparams_file))
             with codecs.getreader("utf-8")(tf.gfile.GFile(hparams_file, "rb")) as f:
                 try:
                     hparams_values = json.load(f)

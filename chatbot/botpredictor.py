@@ -40,7 +40,7 @@ class BotPredictor(object):
         self.session = session
 
         # Prepare data and hyper parameters
-        print("# Prepare dataset placeholder and hyper parameters ...")
+        #print("Prepare dataset placeholder and hyper parameters ...")
         tokenized_data = TokenizedData(corpus_dir=corpus_dir, training=False)
 
         self.knowledge_base = KnowledgeBase()
@@ -54,11 +54,11 @@ class BotPredictor(object):
         self.infer_batch = tokenized_data.get_inference_batch(src_dataset)
 
         # Create model
-        print("# Creating inference model ...")
+        #print("# Creating inference model ...")
         self.model = ModelCreator(training=False, tokenized_data=tokenized_data,
                                   batch_input=self.infer_batch)
         # Restore model weights
-        print("# Restoring model weights ...")
+        #rint("# Restoring model weights ...")
         self.model.saver.restore(session, os.path.join(result_dir, result_file))
 
         self.session.run(tf.tables_initializer())

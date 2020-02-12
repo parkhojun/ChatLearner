@@ -61,7 +61,7 @@ class ModelCreator(object):
                     self.vocab_size, use_bias=False, name="output_projection")
 
         # Training or inference graph
-        print("# Building graph for the model ...")
+        #print("# Building graph for the model ...")
         res = self.build_graph(hparams, scope=scope)
 
         if training:
@@ -104,7 +104,7 @@ class ModelCreator(object):
 
         # Print trainable variables
         if training:
-            print("# Trainable variables:")
+            #print("# Trainable variables:")
             for param in params:
                 print("  {}, {}, {}".format(param.name, str(param.get_shape()), param.op.device))
 

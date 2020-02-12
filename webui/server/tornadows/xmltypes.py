@@ -47,7 +47,7 @@ class Array:
 	    @webservices(_params=xmltypes.Array(xmltypes.Integer),_returns=xmltypes.Integer)
 	    def function(sefl, list_of_elements):
 		for e in list_of_elements:
-		# Do something with the element    
+			Do something with the element    
         	return len(list_of_elements)
 
 	    xmltypes.Array(xmltype.Integer) generate an xml element into schema definition:

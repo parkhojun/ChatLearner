@@ -199,36 +199,36 @@ def _check_username_callme_pattern_and_replace(sentence):
 
 if __name__ == "__main__":
     sentence = "My name is jack brown. Please call me Mr. Brown."
-    print("# {}".format(sentence))
+    #print("# {}".format(sentence))
     _, ns, _ = _check_username_callme_pattern_and_replace(sentence)
     print(ns)
 
     sentence = "My name is Bo Shao."
-    print("# {}".format(sentence))
+    #print("# {}".format(sentence))
     _, ns, _ = _check_username_callme_pattern_and_replace(sentence)
     print(ns)
 
     sentence = "You can call me Dr. Shao."
-    print("# {}".format(sentence))
+    #print("# {}".format(sentence))
     _, ns, _ = _check_username_callme_pattern_and_replace(sentence)
     print(ns)
 
     sentence = "Call me Ms. Tailor please."
-    print("# {}".format(sentence))
+    #print("# {}".format(sentence))
     _, ns, _ = _check_username_callme_pattern_and_replace(sentence)
     print(ns)
 
     sentence = "My name is Mark. Please call me Mark D."
-    print("# {}".format(sentence))
+    #print("# {}".format(sentence))
     _, ns, _ = _check_username_callme_pattern_and_replace(sentence)
     print(ns)
 
     sentence = "My name is not just Shao, but Bo Shao."
-    print("# {}".format(sentence))
+    #print("# {}".format(sentence))
     _, ns, _ = _check_not_username_pattern_and_replace(sentence)
     print(ns)
 
     sentence = "My name is not just Shao."
-    print("# {}".format(sentence))
+    #print("# {}".format(sentence))
     _, ns, _ = _check_not_username_pattern_and_replace(sentence)
     print(ns)

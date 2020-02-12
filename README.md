@@ -13,7 +13,7 @@ Before starting everything else, you may want to get a feeling of how ChatLearne
 
 ![](/Data/Test/chat.png)
 
-## Highlights and Specialties:
+#Highlights and Specialties:
 Why do you want to spend time checking this repository? Here are some possible reasons:
 
 1. The Papaya Data Set for training the chatbot. You can easily find tons of training data online, but you cannot find any with such high quality. See the detailed description below about the data set.

@@ -33,22 +33,10 @@ def bot_ui():
                                  result_dir=res_dir, result_file='basic')
         # This command UI has a single chat session only
         session_id = predictor.session_data.add_session()
-
-        print("Welcome to Chat with ChatLearner!")
-        print("Type exit and press enter to end the conversation.")
         # Waiting from standard input.
-        sys.stdout.write("> ")
-        sys.stdout.flush()
-        question = sys.stdin.readline()
-        while question:
-            if question.strip() == 'exit':
-                print("Thank you for using ChatLearner. Goodbye.")
-                break
-
-            print(re.sub(r'_nl_|_np_', '\n', predictor.predict(session_id, question)).strip())
-            print("> ", end="")
-            sys.stdout.flush()
-            question = sys.stdin.readline()
+        question = ''.join(sys.argv[1:])
+        print(re.sub(r'_nl_|_np_', '\n', predictor.predict(session_id, question)).strip())
+        print("> ", end="")
 
 if __name__ == "__main__":
     bot_ui()

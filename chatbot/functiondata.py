@@ -64,9 +64,9 @@ class FunctionData:
         self.knowledge_base = knowledge_base
         self.chat_session = chat_session
 
-    """
-    # Rule 2: Date and Time
-    """
+    #"""
+    ## Rule 2: Date and Time
+    #"""
     @staticmethod
     def get_date_time():
         return time.strftime("%Y-%m-%d %H:%M")
@@ -96,9 +96,9 @@ class FunctionData:
         weekday = cal.day_name[day_time.weekday()]
         return "{}, {:%B %d, %Y}".format(weekday, day_time)
 
-    """
+    #"""
     # Rule 3: Stories and Jokes, and last topic
-    """
+    #"""
     def get_story_any(self):
         self.chat_session.last_topic = "STORY"
         self.chat_session.keep_topic = True
@@ -133,9 +133,9 @@ class FunctionData:
         else:
             return "Sorry, but what topic do you prefer?"
 
-    """
-    # Rule 4: Arithmetic ops
-    """
+    #"""
+    ## Rule 4: Arithmetic ops
+    #"""
     @staticmethod
     def get_number_plus(num1, num2):
         res = num1 + num2
@@ -176,9 +176,9 @@ class FunctionData:
                     desc = random.choice(FunctionData.easy_list)
                 return "{}{} / {} = {:.2f}".format(desc, num1, num2, res)
 
-    """
+#    """
     # Rule 5: User name, call me information, and last question and answer
-    """
+#    """
     def ask_howru_if_not_yet(self):
         howru_asked = self.chat_session.howru_asked
         if howru_asked:
@@ -346,9 +346,9 @@ class FunctionData:
         self.chat_session.clear_pending_action()
         return reply
 
-    """
+    #"""
     # Other Rules: Client Code
-    """
+    #"""
     def client_code_show_picture_randomly(self, picture_name):
         return ' _cc_start_show_picture_randomly_para1_' + picture_name + '_cc_end_'
 

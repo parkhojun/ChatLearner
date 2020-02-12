@@ -57,7 +57,7 @@ class BotTrainer(object):
             # because not all variables used in the model training may be saved.
             sess.run(tf.global_variables_initializer())
             if last_end_file:  # Continue training from last time
-                print("# Restoring model weights from last time ...")
+                #print("Restoring model weights from last time ...")
                 self.model.saver.restore(sess, os.path.join(result_dir, last_end_file))
 
             sess.run(tf.tables_initializer())
@@ -72,7 +72,7 @@ class BotTrainer(object):
             train_epoch = last_end_epoch
             learning_rate = pre_lr = last_end_lr
 
-            print("# Training loop started @ {}".format(time.strftime("%Y-%m-%d %H:%M:%S")))
+            #print("# Training loop started @ {}".format(time.strftime("%Y-%m-%d %H:%M:%S")))
             epoch_start_time = time.time()
             while train_epoch < num_epochs:
                 # Each run of this while loop is a training step, multiple time/steps will trigger
@@ -96,8 +96,8 @@ class BotTrainer(object):
                     train_perp = math.exp(float(mean_loss)) if mean_loss < 300 else math.inf
 
                     epoch_dur = time.time() - epoch_start_time
-                    print("# Finished epoch {:2d} @ step {:5d} @ {}. In the epoch, learning rate = {:.6f}, "
-                          "mean loss = {:.4f}, perplexity = {:8.4f}, and {:.2f} seconds elapsed."
+                    #print("# Finished epoch {:2d} @ step {:5d} @ {}. In the epoch, learning rate = {:.6f}, "
+                          #"mean loss = {:.4f}, perplexity = {:8.4f}, and {:.2f} seconds elapsed."
                           .format(train_epoch, global_step, time.strftime("%Y-%m-%d %H:%M:%S"),
                                   learning_rate, mean_loss, train_perp, round(epoch_dur, 2)))
                     epoch_start_time = time.time()  # The start time of the next epoch
