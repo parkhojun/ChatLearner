@@ -16,13 +16,10 @@ RUN pip3 install --upgrade pip
 RUN pip3 install tensorflow==1.4.0
 RUN pip3 install nltk
 RUN pip install "numpy<1.17"
-COPY Data Data
-COPY chatbot chatbot
-COPY webui webui
-COPY webui_alternative webui_alternative
-COPY package.json .
-COPY *.py .
-COPY *.js .
+
+COPY --from=chatlearner-hugedata /Data Data
+COPY . .
+
 RUN python3 setnltk.py
 
 
@@ -32,6 +29,7 @@ ENV PYTHONPATH "${PYTHONPATH}:/ChatLearner"
 RUN python3 settings.py
 
 RUN npm install
+RUN pip install flask
 
 EXPOSE 80
 ENTRYPOINT node app.js
