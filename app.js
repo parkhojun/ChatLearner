@@ -30,13 +30,12 @@ runPython = (sentence) => {
   return new Promise((resolve, reject) => {
     let ret = ''
     let config = [
-      repo_dir + "/chatbot/botui.py", '"'+sentence+'"',
-    ]// botui.py se- --model model --input input
-    const pyProg = spawn('python3', config)
+      repo_dir + "/chatbot/botnoui.py", '"'+sentence+'"',
+    ]
+    const pyProg = spawn('python3', config, {stdio: 'pipe'})
     
     pyProg.stderr.on('data', (data) => {
       console.log("runpython return error : " + data.toString())
-      resolve(data.toString())
     })
 
     pyProg.stdout.on('data', (data) =>
@@ -44,6 +43,7 @@ runPython = (sentence) => {
     )
     
     pyProg.on('exit', (code) =>{
+      console.log(ret)
       console.log('exit code : ' + code)
       resolve(JSON.stringify(ret))
     })

@@ -14,8 +14,15 @@ RUN apt-get install -y python3-pip
 RUN pip3 install --upgrade pip
 
 RUN pip3 install tensorflow==1.4.0
-COPY . .
 RUN pip3 install nltk
+RUN pip install "numpy<1.17"
+COPY Data Data
+COPY chatbot chatbot
+COPY webui webui
+COPY webui_alternative webui_alternative
+COPY package.json .
+COPY *.py .
+COPY *.js .
 RUN python3 setnltk.py
 
 
@@ -23,7 +30,6 @@ RUN python3 setnltk.py
 ENV PYTHONPATH "${PYTHONPATH}:/ChatLearner"
 
 RUN python3 settings.py
-RUN pip install "numpy<1.17"
 
 RUN npm install
 
