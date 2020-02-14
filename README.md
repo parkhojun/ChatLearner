@@ -1,3 +1,31 @@
+# ChatLearner-Run-On-Ainize
+[![Run on Ainize](https://ainize.ai/static/images/run_on_ainize_button.svg)](https://ainize.web.app/redirect?git_repo=github.com/parkhojun/ChatLearner.git)
+
+This repository providers a server that A chatbot implemented in TensorFlow based on the new sequence to sequence (NMT) model, with certain rules seamlessly integrated. The model used in the server is from bshao001/ChatLearner git. The inference using server is done in the following steps:
+
+1. User publishes a sentence.
+2. Server returns a response for sentence. Note that the server is implemented in Node.js.
+
+# How to deploy
+
+this server is dockerized, so it can be built and run using docker commands.
+
+# Docker build
+```
+docker build -t mara8534/chatlearner .
+```
+
+# Docker run
+```
+docker run -p 80:80 -it mara8534/chatlearner
+```
+Now the server is available at http://localhost:80.
+
+Note that the docker image can be deployed using any docker-based deploy platform (e.g. ainize.ai).
+
+You can see the demo server from below site
+https://ainize.ai/project/parkhojun/chatlearner/
+
 # ChatLearner
 
 ![](https://img.shields.io/badge/python-3.6.2-brightgreen.svg)  ![](https://img.shields.io/badge/tensorflow-1.4.0-yellowgreen.svg?sanitize=true)

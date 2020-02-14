@@ -29,9 +29,10 @@ ENV PYTHONPATH "${PYTHONPATH}:/ChatLearner"
 RUN python3 settings.py
 
 RUN npm install
-RUN pip install flask
+RUN python3 -m pip install flask
 
 EXPOSE 80
-ENTRYPOINT node app.js
+#ENTRYPOINT node app.js
+ENTRYPOINT python3 app.py
 
 #RUN botbui.py
