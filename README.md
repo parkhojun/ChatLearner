@@ -44,7 +44,7 @@ The result is like this.
 
 
 
-<img src="Data/test/Ainize2.png" align="middle" width="300" />
+<img src="Data/Test/Ainize2.png" align="middle" width="300" />
 
 # References
 
