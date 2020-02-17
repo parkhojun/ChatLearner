@@ -26,6 +26,35 @@ Note that the docker image can be deployed using any docker-based deploy platfor
 You can see the demo server from below site
 https://ainize.ai/project/parkhojun/chatlearner/
 
+
+# How to publish an image file
+
+The image to be evaluated needs to be published first. You can refer to the three following examples of how to publish sentences:
+
+1. Select Sever and Try it.
+2. Enter the sentences taht you want.
+4. Click Execute and wait, then you see a result than translated image.
+
+
+<img src="Data/Test/Ainize1.png" align="middle" width="300" />
+
+
+
+The result is like this.
+
+
+
+<img src="Data/test/Ainize2.png" align="middle" width="300" />
+
+# References
+
+1. https://github.com/bshao001/ChatLearner
+
+
+
+
+---------------------------------------------------
+
 # ChatLearner
 
 ![](https://img.shields.io/badge/python-3.6.2-brightgreen.svg)  ![](https://img.shields.io/badge/tensorflow-1.4.0-yellowgreen.svg?sanitize=true)
