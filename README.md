@@ -1,6 +1,7 @@
 # ChatLearner-Run-On-Ainize
 [![Run on Ainize](https://ainize.ai/static/images/run_on_ainize_button.svg)](https://ainize.web.app/redirect?git_repo=github.com/parkhojun/ChatLearner.git)
 
+
 This repository providers a server that A chatbot implemented in TensorFlow based on the new sequence to sequence (NMT) model, with certain rules seamlessly integrated. The model used in the server is from bshao001/ChatLearner git. The inference using server is done in the following steps:
 
 1. User publishes a sentence.
