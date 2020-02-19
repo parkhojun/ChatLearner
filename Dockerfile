@@ -17,7 +17,7 @@ RUN pip3 install tensorflow==1.4.0
 RUN pip3 install nltk
 RUN pip install "numpy<1.17"
 
-COPY --from=chatlearner-hugedata /Data Data
+COPY --from=minhocomcomai/chatlearner-hugedata /Data Data
 COPY . .
 
 RUN python3 setnltk.py
