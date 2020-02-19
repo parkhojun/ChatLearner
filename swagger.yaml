@@ -5,7 +5,7 @@ info:
     email: hojun@comcom.ai
   version: 0.0.1
 servers:
-    - url: 'https://chatlearner.minho-comcom-ai.endpoint.ainize.ai'
+    - url: 'https://chatlearner.parkhojun.endpoint.ainize.ai'
 paths:
   /chatbot:
     get:
