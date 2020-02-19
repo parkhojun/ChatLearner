@@ -1,44 +1,43 @@
 openapi: 3.0.1
 info:
   title: Ainized-ChatLearner
-  description: 'This repository provides API server using that A chatbot implemented in TensorFlow based on the new sequence to sequence (NMT) model, with certain rules seamlessly integrated.'
   contact:
     email: hojun@comcom.ai
-  license:
-    name: Apache 2.0
-    url: 'https://github.com/parkhojun/ChatLearner/blob/master/LICENSE.txt'
   version: 0.0.1
-externalDocs: 
-  description: Find out more about Code
-  url: https://github.com/bshao001/ChatLearner
 servers:
-    - url: 'https://endpoint.ainize.ai/parkhojun/chatlearner/'
-
+    - url: 'https://chatlearner.minho-comcom-ai.endpoint.ainize.ai'
 paths:
   /chatbot:
     get:
       tags:
-      - ChatLearner-Run-On-Ainize
+      - ChatLearner
       summary: request to reply the sentences ...
       parameters:
       - name: sentence
         in: query
-        description: give me sentence only Eng
+        description: give me sentence
         required: true
         schema:
           type: string
+          default: Hello.
+      - name: previous_session_id
+        in: query
+        description: positive integer for knowledge sharing. (currently, only for single instance scope.)
+        schema:
+          type: integer
       responses:
         200:
           description: Success!
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Sentences'
-        405:
-          description: Invalid input
-          content: {}
-components:
-  schemas:
-    Sentences:
-      type: string
-    
+                type: object
+                properties:
+                  question:
+                    type: string
+                  answer:
+                    type: string
+                  current_session_id:
+                    type: integer
+                  okay:
+                    type: boolean
